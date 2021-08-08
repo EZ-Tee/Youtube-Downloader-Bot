@@ -13,6 +13,6 @@ async def start(client, message):
     welcomed = f"Hey <b>{message.from_user.first_name}</b>\n/help for More info"
     await message.reply_photo(
 img,
-welcomed,
+text=welcomed,
 reply_markup=joinButton)
     raise StopPropagation
