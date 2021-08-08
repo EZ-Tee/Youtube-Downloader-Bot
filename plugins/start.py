@@ -4,11 +4,11 @@ from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, Inl
 @Client.on_message(Filters.command(["start"]), group=-2)
 async def start(client, message):
     # return
+    sticker = "CAACAgEAAxkBAAIeSGELTx2IPwLHPV_aGClOIh2bVzdTAALjAANRKQ05F6bHecKQ5JseBA"
     joinButton = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Channel", url="https://t.me/aryan_bots")],
-        [InlineKeyboardButton(
-            "Report Bugs 😊", url="https://t.me/aryanvikash")]
+        [InlineKeyboardButton("Channel ⚒", url="https://t.me/ez_tee_youtibe")],
+        [InlineKeyboardButton("Feedback👩‍🔧", url="https://t.me/eztee_chat")]
     ])
-    welcomed = f"Hey <b>{message.from_user.first_name}</b>\n/help for More info"
-    await message.reply_text(welcomed, reply_markup=joinButton)
+    
+    await message.reply_sticker(sticker, reply_markup=joinButton)
     raise StopPropagation
