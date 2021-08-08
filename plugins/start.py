@@ -1,4 +1,4 @@
-from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, InlineKeyboardMarkup,parseMode
 
 
 @Client.on_message(Filters.command(["start"]), group=-2)
@@ -13,6 +13,8 @@ async def start(client, message):
     welcomed = f"Hey <b>{message.from_user.first_name}</b>\n/help for More info"
     await message.reply_photo(
 img,
-text=welcomed,
+welcomed,
+parse_mode=ParseMode.MARKDOWN,
+disable_web_page_preview=True,
 reply_markup=joinButton)
     raise StopPropagation
